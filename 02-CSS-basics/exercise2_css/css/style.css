@@ -1,0 +1,21 @@
+html {
+	font-size: 14px;
+	font-family: Verdana;
+}
+header {
+	text-align: center;
+	background-color: blue;
+}
+
+footer {
+	text-align: center;
+	background-color: #A9A9A9;
+}
+
+aside {
+	background-color: #ADFF2F;	
+}
+
+nav {
+	background-color: #D3D3D3;
+}
