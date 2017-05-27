@@ -2,20 +2,28 @@ html {
 	font-size: 14px;
 	font-family: Verdana;
 }
-header {
+.header {
+	font-size: 46px;
 	text-align: center;
+	background-color: magenta;
+}
+
+.footer {
+	font-size: 10px;
+	text-align: center;
+	background-color: magenta;
+}
+
+.content {
+	font-size: 14px;
+}
+
+.sidebar {
+	font-size: 10px;
+	background-color: magenta;	
+}
+
+.navigation {
+	font-size: 12px;
 	background-color: blue;
-}
-
-footer {
-	text-align: center;
-	background-color: #A9A9A9;
-}
-
-aside {
-	background-color: #ADFF2F;	
-}
-
-nav {
-	background-color: #D3D3D3;
 }
