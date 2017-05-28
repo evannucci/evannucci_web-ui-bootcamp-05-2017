@@ -13,6 +13,9 @@
 				var pageLoaded = document.getElementById('load');
 				pageLoaded.style.display="inline";
 				}
+			function clickme(){
+				alert("You clicked me")
+			}
 
 		</script>
 	</head>
@@ -20,7 +23,10 @@
 	<body onload="loadpage()">
 		<section class="hidden" id="load">
 			Hello world
-		</section>
+		</section><br>
+		
+		<button type="button" onclick="clickme()">Button</button>
+
 
 
 	</body>
