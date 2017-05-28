@@ -2,28 +2,36 @@ html {
 	font-size: 14px;
 	font-family: Verdana;
 }
-.header {
-	font-size: 46px;
+.maindiv {
+	width: 600px;
+	margin: auto;
+	background-color: grey;
+}
+
+.box {
 	text-align: center;
+	float:left;
+	height: 200px;
+}
+section{
+	background-color: green;
+	width: 50%;
+}
+.header, .footer {
+	width: 100%;
+	font-size: 16px;
+	text-align: center;
+	display: inline-block;
 	background-color: magenta;
 }
 
-.footer {
-	font-size: 10px;
-	text-align: center;
-	background-color: magenta;
-}
-
-.content {
-	font-size: 14px;
-}
-
-.sidebar {
-	font-size: 10px;
+.sidebar, {
+	width: 25%;
+	font-size: 16px;
 	background-color: magenta;	
 }
-
 .navigation {
-	font-size: 12px;
+	width: 25%;
+	font-size: 16px;
 	background-color: blue;
 }
