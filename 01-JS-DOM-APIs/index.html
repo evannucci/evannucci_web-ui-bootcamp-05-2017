@@ -11,10 +11,11 @@
 
 			function loadpage(){
 				var pageLoaded = document.getElementById('load');
-				pageLoaded.style.display="inline";
+				pageLoaded.style.opacity="1";
+				pageLoaded.style.transition="4000ms all ease";
 				}
 			function clickme(){
-				alert("You clicked me")
+				alert("Ouch, You clicked me!");
 			}
 
 		</script>
@@ -22,12 +23,10 @@
 
 	<body onload="loadpage()">
 		<section class="hidden" id="load">
-			Hello world
+			<h1>Hello world</h1>
 		</section><br>
-		
+
 		<button type="button" onclick="clickme()">Button</button>
-
-
 
 	</body>
 
