@@ -6,44 +6,27 @@ function loadpage()
 }
 
 
-
-function jokeme(path, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                // Here the callback gets implemented
-                object = JSON.parse(xhr.responseText);
-                callback();
-            } else {
-
-            }
-        }
-    };
-
+/*
+function jokeme() {
+    let xhr = new XMLHttpRequest();
     xhr.open('GET','http://api.icndb.com/jokes/random', true);
     xhr.send();
-    return xhr.onreadystatechange();
     console.log(xhr);
+    let e = JSON.parse(this.responseText);
+    console.log(e);
 }
-	
-
-
-
-/*function loadJSON(path, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                object = JSON.parse(xhr.responseText);
-                callback();
-            } else {
-
-            }
+*/
+function jokeme(){
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            obj = JSON.parse(this.response);
+            console.log(obj);
+            console.log(obj.value.joke);
+             document.getElementById("load").innerHTML = obj.value.joke;
         }
-    };
-
-    xhr.open("GET", path, true);
+    }
+    xhr.open('GET','http://api.icndb.com/jokes/random', true);
     xhr.send();
-    return xhr.onreadystatechange();
-}*/
+
+}
