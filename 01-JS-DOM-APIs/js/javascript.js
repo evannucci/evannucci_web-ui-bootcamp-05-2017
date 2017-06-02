@@ -8,9 +8,17 @@ function loadPage()
 
 function jokeMe(config)
 {
+ 
     let promiseObj = new Promise(function(resolve, reject)
     {        
+        let config = {
+            methodType: 'GET',
+            responseType: 'JSON',
+            url: 'http://api.icndb.com/jokes/random'
+        }
         let xhr = new XMLHttpRequest();
+        xhr.open(config.methodType, config.url, true);
+ 
         xhr.onreadystatechange = function()
         {
             if (this.readyState == 4 && this.status == 200)
@@ -20,18 +28,15 @@ function jokeMe(config)
             }
             else
             {
-               reject(xhr.status);
+               //reject("Fail");
                console.log("xhr failed");
             }
         }
-        xhr.open('GET','http://api.icndb.com/jokes/random', true);
-        xhr.send();
-
-        let config = {
-            methodType: 'GET'
-            responseType: 'JSON'
-            url: 'http://api.icndb.com/jokes/random'
-        }
+        xhr.send(null);
+     
     });
     return promiseObj;
 }
+
+
+
