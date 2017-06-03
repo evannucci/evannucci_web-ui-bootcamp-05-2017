@@ -6,36 +6,36 @@ function loadPage()
 }
 
 
+
+
 function jokeMe(config)
 {
- 
+    let config = {
+    methodType: 'GET',
+    responseType: 'JSON',
+    url: 'http://api.icndb.com/jokes/random'
+}
     let promiseObj = new Promise(function(resolve, reject)
     {        
-        let config = {
-            methodType: 'GET',
-            responseType: 'JSON',
-            url: 'http://api.icndb.com/jokes/random'
-        }
+      
         let xhr = new XMLHttpRequest();
         xhr.open(config.methodType, config.url, true);
- 
-        xhr.onreadystatechange = function()
+        xhr.responseType = config.responseType;
+
+        xhr.addEventListener('load', function(response)
         {
-            if (this.readyState == 4 && this.status == 200)
+            if (response.currentTarget.status === 200)
             {
-                obj = JSON.parse(this.response);
-                document.getElementById("load").innerHTML = obj.value.joke;
+                resolve(response.currentTarget.response.value.joke);
             }
             else
             {
-               //reject("Fail");
-               console.log("xhr failed");
+                reject('Fail Request');
             }
-        }
-        xhr.send(null);
-     
-    });
-    return promiseObj;
+        });
+            xhr.send(null);
+    }
+        return promise;
 }
 
 
