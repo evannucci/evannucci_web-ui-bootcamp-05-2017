@@ -5,4 +5,5 @@ section{
 .hidden {
 	opacity: 0;
 	transition:0ms all ease;
+
 	}
